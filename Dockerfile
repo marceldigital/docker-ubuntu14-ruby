@@ -28,6 +28,7 @@ WORKDIR ./ruby-2.1.2
 RUN ./configure
 RUN make
 RUN make install
+ADD gemrc ~/.gemrc
 RUN gem install bundler --no-ri --no-rdoc
 
 CMD ["/bin/bash"]
