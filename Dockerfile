@@ -20,6 +20,8 @@ RUN apt-get -qy install zlib1g-dev
 RUN apt-get -qy install libyaml-dev
 RUN apt-get -qy install libpq-dev
 
+WORKDIR /tmp
+
 RUN wget ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
 RUN tar xvfz ruby-2.1.2.tar.gz
 
@@ -30,5 +32,7 @@ RUN make
 RUN make install
 ADD gemrc ~/.gemrc
 RUN gem install bundler --no-ri --no-rdoc
+
+WORKDIR /
 
 CMD ["/bin/bash"]
