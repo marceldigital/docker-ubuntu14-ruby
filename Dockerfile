@@ -33,6 +33,8 @@ RUN make
 RUN make install
 RUN gem install bundler --no-ri --no-rdoc
 
+RUN apt-get -qy clean
+
 WORKDIR /
 
 CMD ["/bin/bash"]
