@@ -19,6 +19,7 @@ RUN apt-get -qy install libxslt1-dev
 RUN apt-get -qy install zlib1g-dev
 RUN apt-get -qy install libyaml-dev
 RUN apt-get -qy install libpq-dev
+RUN apt-get -qy install openjdk-7-jre
 
 WORKDIR /tmp
 
