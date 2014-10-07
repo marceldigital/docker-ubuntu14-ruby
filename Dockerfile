@@ -1,6 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER Marty McKenna "marty@marcelmedia.com"
 
+ADD ./gemrc /etc/gemrc
+
 RUN apt-get -qy update
 RUN apt-get -qy upgrade
 
@@ -23,10 +25,10 @@ RUN apt-get -qy install openjdk-7-jre
 
 WORKDIR /tmp
 
-RUN wget ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
-RUN tar xvfz ruby-2.1.2.tar.gz
+RUN wget ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.3.tar.gz
+RUN tar xvfz ruby-2.1.3.tar.gz
 
-WORKDIR ./ruby-2.1.2
+WORKDIR ./ruby-2.1.3
 
 RUN ./configure
 RUN make
